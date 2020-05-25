@@ -1,1 +1,299 @@
-hello
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title></title>
+
+        <style>
+
+            #box{
+
+                width:660px;
+
+                height:330px;
+
+                border:5px solid #e5e5e5;
+
+                margin:20px auto;
+
+                position:relative;
+
+            }
+
+            #img{
+
+                width:660px;
+
+                height:330px;
+
+            }
+
+            #lunbo-title{
+
+                height:40px;
+
+                line-height:40px;
+
+                position:absolute;
+
+                right:15px;
+
+                color:#fff;
+
+                font-size:14px;
+
+            }
+
+            #lunbo-num{
+
+                height:40px;
+
+                line-height:40px;
+
+                position:absolute;
+
+                z-index: 11;
+
+                left:15px;
+
+                color:#fff;
+
+                font-size:14px;
+
+            }
+
+            .wrap-prev-next{
+
+                width:100%;
+
+                height:40px;
+
+                position:absolute;
+
+                z-index: 10;
+
+                background: #000;
+
+                line-height:30px;
+
+                left:0;
+
+                bottom:-20px;
+
+                opacity:0.8;
+
+            }
+
+            .prev-next{
+
+                width:40px;
+
+                height:50px;
+
+                line-height:50px;
+
+                position:absolute;
+
+                top:145px;
+
+                font-size:28px;
+
+                color:#FFF;
+
+                text-decoration:none;
+
+            }
+
+            a:hover {
+
+                opacity:0.3;
+
+             }
+
+            #prev {
+
+                left:5px;
+
+            }
+
+            #next {
+
+                right:5px;
+
+            }
+
+        </style>
+
+         
+
+         
+
+         
+
+    </head>
+
+    <body>
+
+ 
+
+        <div id="box">
+
+            <a id="imga" href="" target="_blank">
+
+                <img id="img" />
+
+            </a>
+
+            <!-- <p id="text1"></p><p id="text2">图片文字加载中……</p> -->
+
+            <p class="wrap-prev-next">
+
+                <a id="lunbo-title">图片文字加载中……</a>
+
+                <a id="lunbo-num"></a>
+
+            </p>
+
+            <a id="prev" class="prev-next" href="javascript:void(0)">《</a>
+
+            <a id="next" class="prev-next" href="javascript:void(0)">》</a>
+
+        </div>
+
+    </body>
+
+    <script>
+
+        window.onload= function(){
+
+            var oBox=document.getElementById("box");
+
+            var imga = document.getElementById("imga");
+
+            var oImg=document.getElementById("img");
+
+            var oText1=document.getElementById("lunbo-title");
+
+            var p1=document.getElementById("p1");
+
+            var oText2=document.getElementById("lunbo-num");
+
+            var oPrev=document.getElementById("prev");
+
+            var oNext=document.getElementById("next");
+
+            var arrSrc=[
+
+            "http://p2.cri.cn/M00/98/27/CqgNOlsQRXaAMYcqAAAAAAAAAAA746.660x330.jpg",
+
+            "http://p2.cri.cn/M00/98/27/CqgNOlsQRXaAMYcqAAAAAAAAAAA746.660x330.jpg",
+
+            "http://p2.cri.cn/M00/98/27/CqgNOlsQRXaAMYcqAAAAAAAAAAA746.660x330.jpg",
+
+            "http://p2.cri.cn/M00/98/27/CqgNOlsQRXaAMYcqAAAAAAAAAAA746.660x330.jpg",
+
+            "http://storage.j1home.com/Provider/licensePhoto//%25E7%25A4%25BE%25E4%25BC%259A%25E7%25BB%2584%25E7%25BB%2587/%25E5%2585%25AC%25E7%259B%258A/%25E5%2595%2586%25E5%25AE%25B6/3L%25E7%25BE%258E%25E5%258F%2591%25E6%25B2%2599%25E9%25BE%2599/1509514828534.png",
+
+            "http://p2.cri.cn/M00/98/27/CqgNOlsQRXaAMYcqAAAAAAAAAAA746.660x330.jpg",
+
+            "http://storage.j1home.com/Provider/licensePhoto//%25E7%25A4%25BE%25E4%25BC%259A%25E7%25BB%2584%25E7%25BB%2587/%25E5%2585%25AC%25E7%259B%258A/%25E5%2595%2586%25E5%25AE%25B6/3L%25E7%25BE%258E%25E5%258F%2591%25E6%25B2%2599%25E9%25BE%2599/1509514828534.png"];
+
+            var arrTxt=["文案1","文案2","文案3","文案4","文案5","文案6","文案7"];
+
+            var arrHref=["http://news.cri.cn/20180531/8abbc78f-bfed-db9d-c919-728ecb02e0ef.html",
+
+            "http://news.cri.cn/20180601/c64d3cea-2ca9-5e14-ed79-dad56f3b7a99.html",
+
+            "http://news.cri.cn/20180601/c9aee353-5a34-e908-49d2-995955ef4486.html",
+
+            "http://news.cri.cn/20180531/8abbc78f-bfed-db9d-c919-728ecb02e0ef.html",
+
+            "http://news.cri.cn/20180531/8abbc78f-bfed-db9d-c919-728ecb02e0ef.html",
+
+            "http://news.cri.cn/20180531/8abbc78f-bfed-db9d-c919-728ecb02e0ef.html",
+
+            "http://news.cri.cn/20180531/8abbc78f-bfed-db9d-c919-728ecb02e0ef.html"];
+
+            var num=0;
+
+             
+
+            function lunboFun(){
+
+                imga.href= arrHref[num]; 
+
+                oImg.src = arrSrc[num];
+
+                oText1.innerHTML= num+1 +"/" + arrSrc.length; 
+
+                oText2.innerHTML=arrTxt[num];
+
+                 
+
+            }
+
+            SliderInit();
+
+            oPrev.onclick = function(){
+
+                num--;
+
+                if(num==-1){ 
+
+                    num=arrSrc.length-1;
+
+                }
+
+                lunboFun();
+
+            };
+
+            oNext.onclick = function(){
+
+                num++;
+
+                if(num==arrTxt.length){
+
+                    num=0;
+
+                }
+
+                lunboFun();
+
+            }
+
+ 
+
+            function SliderInit() {
+
+                lunboFun();
+
+                setInterval(function(){
+
+                    num ++;
+
+                    if (num==arrSrc.length){
+
+                    num = 0;
+
+                }
+
+                lunboFun();
+
+                },5000);
+
+            }
+
+ 
+
+ 
+
+        }
+
+    </script>
+
+</html>
