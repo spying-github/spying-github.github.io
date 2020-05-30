@@ -1,75 +1,161 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>html5 3d Banner</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-<link rel="stylesheet" href="css/style.css" type="text/css" />
-
-<script type='text/javascript' src='js/modernizr.min.js'></script>
-<script type='text/javascript'>var CSSettings = {"pluginPath":"module"};</script>
-<script type='text/javascript' src='js/cute.slider.js'></script>
-<script type='text/javascript' src='js/cute.transitions.all.js'></script>
-
-</head>
-<body>
-
-<div class="c-860 c-demoslider">
-	<div id="cuteslider_3_wrapper" class="cs-circleslight">
-		<div id="cuteslider_3" class="cute-slider" data-width="960" data-height="420" data-overpause="true">
-			<ul data-type="slides">
-				<li data-delay="5" data-src="5" data-trans3d="tr6,tr17,tr22,tr23,tr29,tr27,tr32,tr34,tr35,tr53,tr54,tr62,tr63,tr4,tr13,tr45" data-trans2d="tr3,tr8,tr12,tr19,tr22,tr25,tr27,tr29,tr31,tr34,tr35,tr38,tr39,tr41">
-					<img src="images/001.jpg" data-thumb="images/001a.png" />
-					<a data-type="link" href="http://www.17sucai.com" target="_blank"></a>
-				</li>
-				<li data-delay="5" data-src="5" data-trans3d="tr6,tr17,tr22,tr23,tr26,tr27,tr29,tr32,tr34,tr35,tr53,tr54,tr62,tr63,tr4,tr13" data-trans2d="tr3,tr8,tr12,tr19,tr22,tr25,tr27,tr29,tr31,tr34,tr35,tr38,tr39,tr41">
-					<img src="images/blank.png" data-src="images/002.jpg" data-thumb="images/002a.png" />
-					<a data-type="link" href="http://www.17sucai.com" target="_blank"></a>
-				</li>
-				<li data-delay="5" data-src="5" data-trans3d="tr6,tr17,tr22,tr23,tr26,tr27,tr29,tr32,tr34,tr35,tr53,tr54,tr62,tr63,tr4,tr13" data-trans2d="tr3,tr8,tr12,tr19,tr22,tr25,tr27,tr29,tr31,tr34,tr35,tr38,tr41">
-					<img src="images/blank.png" data-src="images/003.jpg" data-thumb="images/003a.png" />
-					<a data-type="link" href="http://www.17sucai.com" target="_blank"></a>
-				</li>
-				<li data-delay="5" data-src="5" data-trans3d="tr6,tr17,tr22,tr23,tr26,tr27,tr29,tr32,tr34,tr35,tr53,tr54,tr62,tr63,tr4,tr13" data-trans2d="tr3,tr8,tr12,tr19,tr22,tr25,tr27,tr29,tr31,tr34,tr35,tr38,tr39,tr41">
-					<img src="images/blank.png" data-src="images/004.jpg" data-thumb="images/004a.png" />
-					<a data-type="link" href="http://www.17sucai.com" target="_blank"></a>
-				</li>
-				<li data-delay="5" data-src="5" data-trans3d="tr6,tr17,tr22,tr23,tr26,tr27,tr29,tr32,tr34,tr35,tr53,tr54,tr62,tr63,tr4,tr13" data-trans2d="tr3,tr8,tr12,tr19,tr22,tr25,tr27,tr29,tr31,tr34,tr35,tr38,tr39,tr41">
-					<img src="images/blank.png" data-src="images/005.jpg" data-thumb="images/005a.png" />
-					<a data-type="link" href="http://www.17sucai.com" target="_blank"></a>
-				</li>
-				<li data-delay="5" data-src="5" data-trans3d="tr6,tr17,tr22,tr23,tr26,tr27,tr29,tr32,tr34,tr35,tr53,tr54,tr62,tr63,tr4,tr13" data-trans2d="tr3,tr8,tr12,tr19,tr22,tr25,tr27,tr29,tr31,tr34,tr35,tr38,tr39,tr41">
-					<img src="images/blank.png" data-src="images/006.jpg" data-thumb="images/006a.png" />
-					<a data-type="link" href="http://www.17sucai.com" target="_blank"></a>
-				</li>
-			</ul>
-			<ul data-type="controls">
-				<li data-type="captions"></li>
-				<li data-type="link"></li>
-				<li data-type="video"></li>
-				<li data-type="slideinfo"></li>
-				<li data-type="circletimer"></li>
-				<li data-type="previous"></li>
-				<li data-type="next"> </li>
-				<li data-type="bartimer"></li>
-				<li data-type="slidecontrol" data-thumb="true" data-thumbalign="up"></li>
-			</ul>
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>看我</title>
+		<style>
+		body
+			{
+				margin:0;
+				background:#000;
+			}
+		#wrap
+			{
+				width:300px;
+				height:400px;
+				position: relative;
+				margin:100px auto;
+				-webkit-perspective:3000px;
+				-moz-perspective:3000px;
+				-ms-transform:perspective(3000px);
+				-ms-perspective:3000px;
+			}
+		#head
+			{
+				width:100%;
+				height:100%;
+				position: absolute;
+				-webkit-transform-style: preserve-3d;
+				-webkit-animation:donghua 15s linear 0s infinite;
+				-moz-transform-style: preserve-3d;
+				-moz-animation:donghua 15s linear 0s infinite;
+				-ms-transform-style: preserve-3d;
+				-ms-animation:donghua 25s linear 0s infinite;
+			}
+		#head div
+			{	
+				position: absolute;
+				top:0;
+				left:0;
+				width:300px;
+				height:400px;
+				border:1px solid red;
+				text-align: center;
+				line-height:100px;
+			}
+		#head div:nth-child(1)
+			{
+				-webkit-transform:rotateY(0deg) translateZ(400px);
+				-moz-transform:rotateY(0deg) translateZ(400px);
+				-ms-transform:rotateY(0deg) translateZ(400px);
+				background:url(images/01.jpg);
+				background-size:cover;
+			}
+		#head div:nth-child(2)
+			{
+				-webkit-transform:rotateY(36deg) translateZ(500px);
+				-moz-transform:rotateY(36deg) translateZ(500px);
+				-ms-transform:rotateY(36deg) translateZ(500px);
+				background:url(images/02.jpg);
+				background-size:cover;
+			}
+			
+		#head div:nth-child(3)
+			{
+				-webkit-transform:rotateY(72deg) translateZ(400px);
+				-moz-transform:rotateY(72deg) translateZ(400px);
+				-ms-transform:rotateY(72deg) translateZ(400px);
+				background:url(images/03.jpg);
+				background-size:cover;
+			}
+			
+		#head div:nth-child(4)
+			{
+				-webkit-transform:rotateY(108deg) translateZ(500px);
+				-moz-transform:rotateY(108deg) translateZ(500px);
+				-ms-transform:rotateY(108deg) translateZ(500px);
+				background:url(images/04.jpg);
+				background-size:cover;
+			}
+		#head div:nth-child(5)
+			{
+				-webkit-transform:rotateY(144deg) translateZ(400px);
+				-moz-transform:rotateY(144deg) translateZ(400px);
+				-ms-transform:rotateY(144deg) translateZ(400px);
+				background:url(images/05.jpg);
+				background-size:cover;
+			}
+		#head div:nth-child(6)
+			{
+				-webkit-transform:rotateY(180deg) translateZ(500px);
+				-moz-transform:rotateY(180deg) translateZ(500px);
+				-ms-transform:rotateY(180deg) translateZ(500px);
+				background:url(images/06.jpg);
+				background-size:cover;
+			}
+		#head div:nth-child(7)
+			{
+				-webkit-transform:rotateY(216deg) translateZ(400px);
+				-moz-transform:rotateY(216deg) translateZ(400px);
+				-ms-transform:rotateY(216deg) translateZ(400px);
+				background:url(images/07.jpg);
+				background-size:cover;
+			}
+		#head div:nth-child(8)
+			{
+				-webkit-transform:rotateY(252deg) translateZ(500px);
+				-moz-transform:rotateY(252deg) translateZ(500px);
+				-ms-transform:rotateY(252deg) translateZ(500px);
+				background:url(images/08.jpg);
+				background-size:cover;
+			}
+		#head div:nth-child(9)
+			{
+				-webkit-transform:rotateY(288deg) translateZ(400px);
+				-moz-transform:rotateY(288deg) translateZ(400px);
+				-ms-transform:rotateY(288deg) translateZ(400px);
+				background:url(images/04.jpg);
+				background-size:cover;
+			}
+		#head div:nth-child(10)
+			{
+				-webkit-transform:rotateY(324deg) translateZ(500px);
+				-moz-transform:rotateY(324deg) translateZ(500px);
+				-ms-transform:rotateY(324deg) translateZ(500px);
+				background:url(images/07.jpg);
+				background-size:cover;
+			}
+		@-webkit-keyframes donghua{
+			0%{transform:rotateX(5deg) rotateY(360deg)}
+			50%{transform:rotateX(-5deg) rotateY(180deg)}
+			100%{transform:rotateX(5deg) rotateY(0deg)}
+		}
+		@-moz-keyframes donghua{
+			0%{transform:rotateY(10deg) rotateY(0deg)}
+			50%{transform:rotateY(-10deg) rotateY(180deg)}
+			100%{transform:rotateY(10deg) rotateY(360deg)}
+		}
+		@-ms-keyframes donghua{
+			0%{transform:rotateY(10deg) rotateY(0deg)}
+			50%{transform:rotateY(-10deg) rotateY(180deg)}
+			100%{transform:rotateY(10deg) rotateY(360deg)}
+		}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="head">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
 		</div>
-		<div class="cute-shadow"><img src="images/shadow.png" alt="shadow" /></div>
-	</div>
-</div>
-
-<script type="text/javascript">
-var cuteslider3 = new Cute.Slider();
-cuteslider3.setup("cuteslider_3" , "cuteslider_3_wrapper", "css/slider-style.css");
-cuteslider3.api.addEventListener(Cute.SliderEvent.CHANGE_START, function(event){});
-cuteslider3.api.addEventListener(Cute.SliderEvent.CHANGE_END, function(event){});
-cuteslider3.api.addEventListener(Cute.SliderEvent.WATING, function(event){});
-cuteslider3.api.addEventListener(Cute.SliderEvent.CHANGE_NEXT_SLIDE, function(event){});
-cuteslider3.api.addEventListener(Cute.SliderEvent.WATING_FOR_NEXT, function(event){});
-</script>
-
-</body>
+	</body>
 </html>
