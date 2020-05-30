@@ -1,91 +1,10 @@
 <!DOCTYPE html>
-
 <html>
-
     <head>
-
         <meta charset="UTF-8">
-
         <title></title>
-
-
     </head>
-
     <body>
-        <a href="./demo1.html">demo1</a>
- 
-
-
+        <a href="./demo.html">demo</a>
     </body>
-
-    <script>
-
-            function lunboFun(){
-
-                imga.href= arrHref[num]; 
-
-                oImg.src = arrSrc[num];
-
-                oText1.innerHTML= num+1 +"/" + arrSrc.length; 
-
-                oText2.innerHTML=arrTxt[num];
-
-                 
-
-            }
-
-            SliderInit();
-
-            oPrev.onclick = function(){
-
-                num--;
-
-                if(num==-1){ 
-
-                    num=arrSrc.length-1;
-
-                }
-
-                lunboFun();
-
-            };
-
-            oNext.onclick = function(){
-
-                num++;
-
-                if(num==arrTxt.length){
-
-                    num=0;
-
-                }
-
-                lunboFun();
-
-            }
-
- 
-
-            function SliderInit() {
-
-                lunboFun();
-
-                setInterval(function(){
-
-                    num ++;
-
-                    if (num==arrSrc.length){
-
-                    num = 0;
-
-                }
-
-                lunboFun();
-
-                },5000);
-
-            }
-
-    </script>
-
 </html>
